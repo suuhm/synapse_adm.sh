@@ -2,7 +2,7 @@
 Simple shellscript for managing and database shrinking your matrix synapse server
 
 #### Functions:
-```python
+```
 
  __________________________________________________________
  ___  _   _  _ __    __ _  _ __   ___  ___        __ _  __| | _ __ ___
@@ -29,12 +29,42 @@ Usage: ./synapse_adm.sh [OPTION]
 Simply run this on your serial/ssh console: 
 ```bash
 sudo su --
-wget https://raw.githubusercontent.com/suuhm/synapse_adm.sh/main/synapse_adm.sh ; chmod +x synapse_adm.sh
+wget https://raw.githubusercontent.com/suuhm/synapse_adm.sh/main/synapse_adm.sh 
+chmod +x synapse_adm.sh 
 ./synapse_adm.sh --help
 ```
 
 Alternatively you can just clone the project or copy/paste the file to your ssh console
 
+## Configure these necessary lines in synapse_adm.sh to run the script
+
+```bash
+# Open with vi / nane / etc
+#
+# Maininfos
+#
+SRV_DOM="matrix.your-server.com"
+MTRXCONF="/etc/matrix-synapse/homeserver.yaml"
+
+#
+# Databseinfos:
+#
+DBSYSTEM="Sqlite3"
+#DBSYSTEM="Postgresql"
+SQDB="/var/lib/matrix-synapse/homeserver.db"
+# POSTGRESQL:
+DB_HOST="127.0.0.1"
+DB_USER="user"
+DB_PASSWD="secr3tpasswd"
+PSQDB="synapse_dbname"
+
+#
+# Mail / Loginfos / etc
+#
+MAILCR=NO
+POSTMASTER="mail@mailserv.com"
+
+```
 
 <br>
 <hr>
