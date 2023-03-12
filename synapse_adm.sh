@@ -22,6 +22,7 @@
 #
 # sqlite3 /var/lib/matrix-synapse/homeserver.db 'select ip,user_agent from user_ips where user_id LIKE "%tester%"'
 
+# Debugging:
 #set -x
 set -e
 
